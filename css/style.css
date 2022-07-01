@@ -1,0 +1,159 @@
+﻿/*
+File: style.css
+
+GUI Assignment: HW5 Implementing a Bit of Scrabble with Drag-and-Drop
+
+Created by: Hunter Spadafora, hunter_spadafora@student.uml.edu
+Created on: 6/28/2022
+
+Description:
+Main CSS page for the HW5 scrabble assignment.
+
+Copyright (c) 2022 by Hunter Spadafora. All rights reserved.
+May be freely copied or excerpted for educational purposes with credit
+to the author.
+Most recent update by HZS on 6/30/2022
+*/
+
+
+
+/* Overall body style */
+body {
+    background-color: rgb(196, 196, 136);
+    --width: 750px;
+    --max-width: 100vw;
+}
+
+/* Header at top */
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-style: italic;
+    text-decoration: underline dashed;
+}
+
+/* Scrabble game ---------------------------------------------------- */
+/*
+#Scrabble_game {
+    display: grid;
+    min-width: 30em;
+    max-width: 50em;
+    height: auto;
+    margin: auto;
+
+    /* Tried hard-coding the grid but since the Scrabble board image is
+    crooked this was as close as I could get */
+
+    /* Width 17 units, 15 spaces and the 2 edges
+    grid-template-columns: 14% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18% 5.18%;
+    /* Height 19 units, 15 spaces and the 2 edges plus a space for the tile holder and a space for the buttons and score display
+    grid-template-rows: 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4% 4%;
+}
+*/
+
+/* Scrabble board space --------------------------------------------- */
+div#scrabble_board {
+    width: var(--width);
+    max-width: var(--max-width);
+
+    /* Tried hard-coding the grid but since the Scrabble board image is
+    crooked this was as close as I could get */
+    display: grid;
+    grid-template-columns: 14% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% 5.17% auto;
+    grid-template-rows: 8% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% 5.64% auto;
+    margin: auto;
+}
+
+div#scrabble_board img {
+    grid-row: 1 / 18;
+    grid-column: 1 / 18;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Player space beneath the board ----------------------------------- */
+#player_space {
+    width: var(--width);
+    max-width: var(--max-width);
+    display: grid;
+    margin: auto;
+    grid-template-columns: 25% 50% 25%;
+}
+
+/* Middle player space with tile holder and tiles ------------------- */
+div#tile_holder {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto calc(var(--width) * 0.0517) calc(var(--width) * 0.0517) calc(var(--width) * 0.0517) calc(var(--width) * 0.0517) calc(var(--width) * 0.0517) calc(var(--width) * 0.0517) calc(var(--width) * 0.0517) auto;
+    grid-column: 2;
+}
+
+div#tile_holder img#tray {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    grid-column: 1 / span 9;
+    grid-row: 1;
+}
+
+/* left player space with buttons ----------------------------------- */
+#player_space #left {
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+}
+
+#submit {
+    grid-row: 3;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+#redraw {
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+#restore {
+    grid-row: 1;
+    height: 100%;
+    width: 100%;
+    margin: auto;;
+}
+
+/* Right player space with score ------------------------------------ */
+#player_space #right {
+    grid-column: 3;
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+#word_score {
+    grid-row: 1;
+    margin: auto;
+}
+
+#word_score input {
+    width: 75%;
+}
+
+#total_score {
+    grid-row: 2;
+    margin: auto;
+}
+
+#total_score input {
+    width: 75%;
+}
+
+/* Footer at bottom */
+footer {
+    text-align: center;
+}

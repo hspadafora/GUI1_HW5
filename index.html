@@ -1,0 +1,111 @@
+﻿
+<!DOCTYPE html>
+<!--
+    File: index.html
+
+    GUI Assignment: HW5 Implementing a Bit of Scrabble with Drag-and-Drop
+
+    Created by: Hunter Spadafora, hunter_spadafora@student.uml.edu
+    Created on: 6/28/2022
+
+    Description:
+    Main html page for the HW5 scrabble assignment.
+
+    Copyright (c) 2022 by Hunter Spadafora. All rights reserved.
+    May be freely copied or excerpted for educational purposes with credit
+    to the author.
+    Most recent update by HZS on 6/30/2022
+-->
+
+<html lang="en">
+    <!-- Head contains data not shown on the webpage (i.e. metadata) -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Main html page for the HW5 scrabble assignment.">
+        <meta name="author" content="Hunter Spadafora">
+        <meta name="creator" content="Hunter Spadafora">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>HW5 - Scrabble - GUI1 Summer 2022</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Scrabble</h1>
+            <p>
+                Welcome to Scrabble!
+            </p>
+            <p>
+                <a href="https://youtu.be/dSXSYwBBTFs">Here's how to play</a>
+            </p>
+            <input type="button" value="Start new game" id="start_game">
+        </header>
+
+        <br>
+
+        <!-- div for the Scrabble board grid -->
+        <div id="Scrabble_game">
+
+            <!-- Scrabble board -->
+            <div id="scrabble_board">
+                <img src="./images/ScrabbleBoard.jpg" alt="Scrabble board">
+
+            </div>
+
+            <!-- Player space beneath the board -->
+            <div id="player_space">
+
+                <!-- Left space (buttons) -->
+                <div id="left">
+
+                    <!-- Button to restore letters -->
+                    <input type="button" value="restore letters" id="restore" class="game_button" disabled>
+
+                    <!-- Button to redraw tiles -->
+                    <input type="button" value="redraw" id="redraw" class="game_button" disabled>
+
+                    <!-- Button to submit word -->
+                    <input type="button" value="submit" id="submit" class="game_button" disabled>
+                </div>
+
+                <!-- Middle spcae (Tile holder) -->
+                <div id="tile_holder">
+                    <img src="./images/scrabble-tile-holder-406774_640.png" alt="tile holder" id="tray">
+                    <!-- test tile -->
+                    <!-- <img src="./images/Scrabble_Tiles/Scrabble_Tile_A.jpg" alt="'A' tile" class="hand"> -->
+                </div>
+
+                <!-- Right space (score) -->
+                <div id="right">
+
+                    <!-- Shows the score of the current word -->
+                    <div id="word_score">
+                        <label for="word_score">Word Score</label>
+                        <input type="number" name="word_score" class="score" disabled>
+                    </div>
+
+                    <!-- Shows the total score -->
+                    <div id="total_score">
+                        <label for="total_score">Totel Score</label>
+                        <input type="number" name="total_score" class="score" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p style="text-align: center;"><i>Copyright &copy; 2022, Hunter Spadafora</i></p>
+
+            <!-- Empty space for scrolling -->
+            <!-- <div style="margin-top:500px"></div> -->
+        </footer>
+
+        <!-- scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
